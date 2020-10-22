@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses_OM">
+  <DataContextMoniker Name="/DataClasses_OMDataContext" />
+  <nestedChildShapes>
+    <classShape Id="13bdb539-57f8-4d70-9183-b1f684f10ebf" absoluteBounds="0.5, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClasses_OMDataContext/Customer_cls" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6516853-d407-4dd8-abd1-5ff4aa50bf8d" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bff533c9-56a1-45b8-9f04-7ac6a6c47ccb" absoluteBounds="2.875, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClasses_OMDataContext/Merchandise_cls" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7042a7e-c786-44a9-8f67-26cc136c916a" absoluteBounds="2.8899999999999997, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="073439fe-d509-4d66-b891-66c6838df682" absoluteBounds="1.625, 2.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClasses_OMDataContext/Order_cls" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72e15a7e-ef3e-4e5c-b5f5-718078989895" absoluteBounds="1.6400000000000001, 3.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.0625 : 1.69399251302083); (2.0625 : 2.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses_OMDataContext/Customer_cls/Customer_cls_Order_cls" />
+      <nodes>
+        <classShapeMoniker Id="13bdb539-57f8-4d70-9183-b1f684f10ebf" />
+        <classShapeMoniker Id="073439fe-d509-4d66-b891-66c6838df682" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.25 : 1.69399251302083); (3.25 : 2.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses_OMDataContext/Merchandise_cls/Merchandise_cls_Order_cls" />
+      <nodes>
+        <classShapeMoniker Id="bff533c9-56a1-45b8-9f04-7ac6a6c47ccb" />
+        <classShapeMoniker Id="073439fe-d509-4d66-b891-66c6838df682" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OrderManagement" Class="DataClasses_OMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=OrderManagement;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OM_DATA" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Table_Customer" Member="Customer_cls">
+    <Type Name="Customer_cls">
+      <Column Name="customer_code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Customer_cls_Order_cls" Member="Order_cls" ThisKey="customer_code" OtherKey="customer_code" Type="Order_cls" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Table_Merchandise" Member="Merchandise_cls">
+    <Type Name="Merchandise_cls">
+      <Column Name="merchandise_code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="merchandise" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Merchandise_cls_Order_cls" Member="Order_cls" ThisKey="merchandise_code" OtherKey="merchandise_code" Type="Order_cls" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Table_Order" Member="Order_cls">
+    <Type Name="Order_cls">
+      <Column Name="order_code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customer_code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="merchandise_code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="deadline" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="Customer_cls_Order_cls" Member="Customer_cls" ThisKey="customer_code" OtherKey="customer_code" Type="Customer_cls" IsForeignKey="true" />
+      <Association Name="Merchandise_cls_Order_cls" Member="Merchandise_cls" ThisKey="merchandise_code" OtherKey="merchandise_code" Type="Merchandise_cls" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
